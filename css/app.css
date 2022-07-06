@@ -9,10 +9,77 @@ ul, ol, menu{
 }
 a{
   text-decoration: none;
-  color: white;
+  
+}
+.container-all{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+ 
+  
+ }
+.container{
+  flex-grow: 1;
+  display: flex;
 }
 
 
+
+/* sidebar */
+.sidebar{
+  width: 240px;
+  background-color: black;
+  padding: 1.5rem 1.5rem ;
+}
+.sidebar .logo img{
+ filter: grayscale(1) invert(1); 
+ width: 40px;
+ aspect-ratio: 1;
+}
+.sidebar .logo{
+  display: flex;
+  color: white;
+  align-items: center;
+  gap:8px;
+}
+.sidebar li, .sidebar-list-title {
+  color: #868686;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 2rem;
+}
+.sidebar li a{
+  color: inherit;
+}
+.sidebar li img{
+  filter: invert(0.5);
+  width: 20px; 
+  
+}
+
+.sidebar li:hover, .sidebar-list-title:hover{
+  color: white;
+}
+.sidebar li:hover img{
+  filter: invert(0);
+}
+.nav-bar ul li a{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  
+}
+.nav-bar li a svg{
+ width: 40px;
+ fill: grey; 
+}
+.nav-bar li:hover svg{
+  fill: white;
+}
+
+.sidebar ul{
+  margin-bottom: 1rem;
+}
 
 
 /* toolbar */
@@ -22,8 +89,6 @@ a{
   background-color: #282828;
   flex-wrap: nowrap;
   padding: 0.625rem 0.625rem;
-  position: fixed;
-  z-index: 2;
   width: 100%;
 }
 
@@ -52,6 +117,10 @@ a{
   font-weight: 600;
   color: #868686;
 }
+.player-song .player-songartist:hover{
+  text-decoration: underline;
+  color: white;
+}
 .toolbar .song-actions{
   display: flex;
 }
@@ -60,6 +129,10 @@ a{
   fill:#868686 ;
   padding: 0px 6px;
 }
+.song-actions svg:hover{
+  fill:white;
+}
+
 
 .player-album{
   display: flex;
@@ -113,7 +186,9 @@ input[type='range']::-webkit-slider-thumb {
   margin-left:25px ;
   margin-right:25px ;
 }
-
+#play-button:hover{
+  transform: scale(1.1);
+}
 .song-progression .song-bar{
   height: 100%;
   background-color: white;
@@ -124,6 +199,9 @@ input[type='range']::-webkit-slider-thumb {
   animation-timing-function: steps(60);
   animation-iteration-count: infinite;
 
+}
+.song-progression:hover .song-bar{
+background-color: greenyellow;
 }
 @keyframes songprog{
   0% {
